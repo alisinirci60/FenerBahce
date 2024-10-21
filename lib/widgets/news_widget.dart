@@ -3,7 +3,6 @@
 import 'package:fenerbahce/widgets/news_item.dart';
 import 'package:flutter/material.dart';
 
-// CustomWidget adında bir widget oluşturuyoruz.
 class CustomWidget extends StatefulWidget {
   NewsItem item;
 
@@ -15,7 +14,6 @@ class CustomWidget extends StatefulWidget {
 class _CustomWidgetState extends State<CustomWidget> {
   int counter = 0; // Sayaç için bir değişken
 
-  // Butona her basıldığında sayacı artırıyoruz.
   void _incrementCounter() {
     setState(() {
       counter++;
@@ -24,7 +22,7 @@ class _CustomWidgetState extends State<CustomWidget> {
 
   @override
   Widget build(BuildContext context) {
-  NewsItem newsItem = widget.item;
+    NewsItem newsItem = widget.item;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
@@ -41,7 +39,7 @@ class _CustomWidgetState extends State<CustomWidget> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                newsItem.title, 
+                newsItem.title,
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -61,3 +59,4 @@ class _CustomWidgetState extends State<CustomWidget> {
     );
   }
 }
+//deneme 12345

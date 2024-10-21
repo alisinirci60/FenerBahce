@@ -1,5 +1,5 @@
-// news_data.dart
-import 'news_item.dart'; // NewsItem modelini içe aktar
+
+import 'news_item.dart'; 
 
 final List<NewsItem> newsData = [
   NewsItem(

@@ -1,9 +1,7 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:fenerbahce/widgets/news_widget.dart';
 import 'package:flutter/material.dart';
-import '../widgets/my_drawer.dart';
-import '../widgets/news_data.dart'; // news_data'yı içe aktar
+import 'drawer/my_drawer.dart';
+import '../widgets/news_data.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -31,11 +29,11 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.search, color: Colors.white), // Arama ikonu beyaz
+            icon: const Icon(Icons.search, color: Colors.white),
             onPressed: () {
               showSearch(
                 context: context,
-                delegate: CustomSearchDelegate(), // Arama işlevselliği
+                delegate: CustomSearchDelegate(),
               );
             },
           ),
@@ -45,7 +43,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: newsData.length,
         itemBuilder: (context, index) {
-          final newsItem = newsData[index]; // newsData'dan veri çekiyoruz
+          final newsItem = newsData[index];
           return CustomWidget(item: newsItem);
         },
       ),
@@ -54,7 +52,6 @@ class HomeScreen extends StatelessWidget {
 }
 
 class CustomSearchDelegate extends SearchDelegate {
-  // Arama yapılacak veriler
   final List<String> data = [
     "Samsunspor maçının deplasman tribünü biletleri satışa çıkıyor",
     "Fenerbahçe Beko, Kızılyıldız’ı konuk ediyor",
@@ -71,7 +68,7 @@ class CustomSearchDelegate extends SearchDelegate {
       IconButton(
         icon: const Icon(Icons.clear),
         onPressed: () {
-          query = ''; // Arama kutusunu temizle
+          query = ''; 
         },
       ),
     ];
@@ -82,7 +79,7 @@ class CustomSearchDelegate extends SearchDelegate {
     return IconButton(
       icon: const Icon(Icons.arrow_back),
       onPressed: () {
-        close(context, null); // Arama kutusunu kapat
+        close(context, null); 
       },
     );
   }
@@ -97,7 +94,7 @@ class CustomSearchDelegate extends SearchDelegate {
         return ListTile(
           title: Text(results[index]),
           onTap: () {
-            close(context, results[index]); // Sonucu seçince arama kutusunu kapat
+            close(context, results[index]); 
           },
         );
       },
@@ -106,6 +103,10 @@ class CustomSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    if (query.isEmpty) {
+      return Container(); 
+    }
+    
     final suggestions = data.where((element) => element.toLowerCase().contains(query.toLowerCase())).toList();
 
     return ListView.builder(
@@ -114,8 +115,8 @@ class CustomSearchDelegate extends SearchDelegate {
         return ListTile(
           title: Text(suggestions[index]),
           onTap: () {
-            query = suggestions[index]; // Öneri tıklanınca sorguyu güncelle
-            showResults(context); // Sonuçları göster
+            query = suggestions[index];
+            showResults(context);
           },
         );
       },
