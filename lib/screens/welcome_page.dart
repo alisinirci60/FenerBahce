@@ -1,5 +1,5 @@
+import 'package:fenerbahce/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:fenerbahce/screens/login_page.dart';
 
 class WelcomePage extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _WelcomePageState extends State<WelcomePage> {
   
   Route _createRoute() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => LoginPage(),
+      pageBuilder: (context, animation, secondaryAnimation) => HomeScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(0.0, 1.0); 
         const end = Offset.zero;
@@ -62,7 +62,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 30),
-                // Yükleniyor barı
+                
                 CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
                     Color(0xFFFFED00),

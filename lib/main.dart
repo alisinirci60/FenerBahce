@@ -1,4 +1,3 @@
-import 'package:fenerbahce/screens/login_page.dart';
 import 'package:fenerbahce/screens/welcome_page.dart';
 import 'package:flutter/material.dart';
 

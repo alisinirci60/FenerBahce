@@ -17,12 +17,7 @@ final List<NewsItem> newsData = [
     description: "Fenerbahçe'nin Avrupa Ligi'ndeki yeni rakibi belli oldu.",
     imageUrl: "https://www.timeturk.com/resim/detay/169/1695761.jpg",
   ),
-  NewsItem(
-    title: "Başkanımız Ali Y. Koç, basın toplantısında çok önemli açıklamalarda ve tespitlerde bulundu",
-    description: "Başkanımız Ali Y. Koç, Fenerbahçe Faruk Ilgaz Tesisleri’nde düzenlediği basın toplantısında çok önemli tespitlerde ve açıklamalarda bulundu.",
-    imageUrl: "https://media.fenerbahce.org/getmedia/5543316e-480b-49c9-be05-403f591b38aa/kapakbaskan_1.jpg?width=1200&height=675&ext=.jpg",
-  ),
-    NewsItem(
+     NewsItem(
     title: "Fenerbahçe Medicana - Eczacıbaşı Dynavit: 3-1 (MAÇ SONUCU)",
     description: "Fenerbahçe Medicana, 2024 Kadınlar AXA Sigorta Şampiyonlar Kupası maçında Eczacıbaşı Dynavit'i 3-1 mağlup ederek şampiyon oldu. Sarı-lacivertliler, dev kupayı 5. kez müzesine götürdü.",
     imageUrl: "https://arsavev.com.tr/wp-content/uploads/2023/11/superbasin1_47109_7518248.jpg",

@@ -1,7 +1,5 @@
-import 'package:fenerbahce/widgets/news_widget.dart';
 import 'package:flutter/material.dart';
-import 'drawer/my_drawer.dart';
-import '../widgets/news_data.dart';
+import '../drawer/otherPages/my_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -27,99 +25,12 @@ class HomeScreen extends StatelessWidget {
             },
           ),
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search, color: Colors.white),
-            onPressed: () {
-              showSearch(
-                context: context,
-                delegate: CustomSearchDelegate(),
-              );
-            },
-          ),
-        ],
       ),
       drawer: MyDrawer(),
-      body: ListView.builder(
-        itemCount: newsData.length,
-        itemBuilder: (context, index) {
-          final newsItem = newsData[index];
-          return CustomWidget(item: newsItem);
-        },
+      body: Center(
+        child: Text("TEST"),
+        
       ),
-    );
-  }
-}
-
-class CustomSearchDelegate extends SearchDelegate {
-  final List<String> data = [
-    "Samsunspor maçının deplasman tribünü biletleri satışa çıkıyor",
-    "Fenerbahçe Beko, Kızılyıldız’ı konuk ediyor",
-    "Avrupa Ligi'nde Yeni Rakip!",
-    "Başkanımız Ali Y. Koç, basın toplantısında çok önemli açıklamalarda bulundu",
-    "Fenerbahçe Medicana - Eczacıbaşı Dynavit: 3-1 (MAÇ SONUCU)",
-    "MİLLİLER İZLANDA'DA TARİH YAZDI!",
-    "Norwich Teknik Direktörü Palmer'dan Osayi Samuel açıklaması",
-  ];
-
-  @override
-  List<Widget> buildActions(BuildContext context) {
-    return [
-      IconButton(
-        icon: const Icon(Icons.clear),
-        onPressed: () {
-          query = ''; 
-        },
-      ),
-    ];
-  }
-
-  @override
-  Widget buildLeading(BuildContext context) {
-    return IconButton(
-      icon: const Icon(Icons.arrow_back),
-      onPressed: () {
-        close(context, null); 
-      },
-    );
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    final results = data.where((element) => element.toLowerCase().contains(query.toLowerCase())).toList();
-
-    return ListView.builder(
-      itemCount: results.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(results[index]),
-          onTap: () {
-            close(context, results[index]); 
-          },
-        );
-      },
-    );
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    if (query.isEmpty) {
-      return Container(); 
-    }
-    
-    final suggestions = data.where((element) => element.toLowerCase().contains(query.toLowerCase())).toList();
-
-    return ListView.builder(
-      itemCount: suggestions.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(suggestions[index]),
-          onTap: () {
-            query = suggestions[index];
-            showResults(context);
-          },
-        );
-      },
     );
   }
 }

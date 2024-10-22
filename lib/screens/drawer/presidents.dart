@@ -1,1 +1,0 @@
-//https://www.whitehouse.gov/about-the-white-house/presidents/ buradan örnek olabilir
