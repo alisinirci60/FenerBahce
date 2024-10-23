@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fenerbahce/widgets/news_data.dart';
 import 'package:fenerbahce/widgets/news_widget.dart';
 
-class News extends StatelessWidget {
+class OurHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

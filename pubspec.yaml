@@ -39,6 +39,9 @@ dependencies:
   sqflite: ^2.4.0
   google_maps_flutter: ^2.9.0
   link_text: ^0.2.1
+  carousel_slider: ^5.0.0
+  font_awesome_flutter: ^10.7.0
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -66,7 +69,25 @@ flutter:
   assets:
     - assets/images/fb.jpg
     - assets/images/stadium.jpg
-
+    - assets/images/presidents/ali.jpeg
+    - assets/images/presidents/aziz.jpg
+    - assets/images/presidents/Faruk_Ilgaz.jpg
+    - assets/images/presidents/şükrü.jpg
+    - assets/images/presidents/zeki.jpeg
+    - assets/images/presidents/ziya.jpeg
+    - assets/images/presidents/hasan.jpeg
+    - assets/images/CarouselSlider/1d36ff6bb33277af7cbf13c61ce72db3.jpg
+    - assets/images/CarouselSlider/9b8551ea7d02ef27ce3fdc6c64d07517.jpg
+    - assets/images/CarouselSlider/82bda8eb10d7d9897204fd7a459829e2.jpg
+    - assets/images/CarouselSlider/893eb0d38fbf37c9aa13c9533d3b230e.jpg
+    - assets/images/CarouselSlider/3243e26eed3f15367281032f886acfda.jpg
+    - assets/images/CarouselSlider/ad37d6ff980bac6d7f463ccc36da9cc6.jpg
+    - assets/images/CarouselSlider/c0feb31e8d67189b2c54702b8ed905eb.jpg
+    - assets/images/CarouselSlider/k.jpg
+    - assets/images/CarouselSlider/l.jpg
+    - assets/images/CarouselSlider/q.jpg
+  
+  
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

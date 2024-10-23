@@ -1,5 +1,14 @@
+class NewsItem {
+  final String title;
+  final String description;
+  final String imageUrl;
 
-import 'news_item.dart'; 
+  NewsItem({
+    required this.title,
+    required this.description,
+    required this.imageUrl,
+  });
+}
 
 final List<NewsItem> newsData = [
   NewsItem(
@@ -17,19 +26,19 @@ final List<NewsItem> newsData = [
     description: "Fenerbahçe'nin Avrupa Ligi'ndeki yeni rakibi belli oldu.",
     imageUrl: "https://www.timeturk.com/resim/detay/169/1695761.jpg",
   ),
-     NewsItem(
+  NewsItem(
     title: "Fenerbahçe Medicana - Eczacıbaşı Dynavit: 3-1 (MAÇ SONUCU)",
-    description: "Fenerbahçe Medicana, 2024 Kadınlar AXA Sigorta Şampiyonlar Kupası maçında Eczacıbaşı Dynavit'i 3-1 mağlup ederek şampiyon oldu. Sarı-lacivertliler, dev kupayı 5. kez müzesine götürdü.",
+    description: "Fenerbahçe Medicana, 2024 Kadınlar AXA Sigorta Şampiyonlar Kupası maçında Eczacıbaşı Dynavit'i 3-1 mağlup ederek şampiyon oldu.",
     imageUrl: "https://arsavev.com.tr/wp-content/uploads/2023/11/superbasin1_47109_7518248.jpg",
   ),
-    NewsItem(
+  NewsItem(
     title: "MİLLİLER İZLANDA'DA TARİH YAZDI! İzlanda - Türkiye maçı canlı sonucu: 2-4",
-    description: "A Milli Futbol Takımımız, UEFA Uluslar Ligi'nde deplasmanda İzlanda ile karşı karşıya geldi. Heyecan dolu maçı A Milli Futbol Takımımız 4-2 kazandı. Bu sonucun ardından Ay-Yıldızlılar, tarihe ilk kez İzlanda'yı deplasmanda mağlup etti..",
+    description: "A Milli Futbol Takımımız, UEFA Uluslar Ligi'nde deplasmanda İzlanda ile karşı karşıya geldi. Maçı 4-2 kazandık.",
     imageUrl: "https://image.fanatik.com.tr/i/fanatik/75/665x369/670d84fccc42858facd552c7.jpg",
   ),
-    NewsItem(
-    title: "Norwich Teknik Direktörü Palmer'dan Osayi Samuel açıklaması: Transfer edilirse harika hamle olur",
-    description: "İngiliz ekibinin teknik patronu, Fenerbahçe ile olan sözleşmesi sezon sonunda bitecek olan Nijeryalı yıldızla ilgili transfer açıklaması yaptı.",
+  NewsItem(
+    title: "Norwich Teknik Direktörü Palmer'dan Osayi Samuel açıklaması",
+    description: "İngiliz ekibi, Fenerbahçe ile olan sözleşmesi sezon sonunda bitecek olan Nijeryalı yıldızla ilgili transfer açıklaması yaptı.",
     imageUrl: "https://image.milimaj.com/i/milliyet/75/869x477/670a32dbac0e445b223663b0.jpg",
   ),
 ];

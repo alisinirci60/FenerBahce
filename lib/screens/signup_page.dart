@@ -43,7 +43,21 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        backgroundColor:Color.fromARGB(255, 0, 45, 114), 
+        title: Text(
+          'Sign Up',
+          style: TextStyle(
+            color:Color(0xFFFFED00),
+            fontSize:24,
+            fontFamily:'LilitaOne'
+             ),
+        ),
+        leading: IconButton( 
+          icon: Icon(Icons.arrow_back, color: Colors.white), 
+          onPressed: () {
+            Navigator.pop(context); 
+          },
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -52,7 +66,6 @@ class _SignUpPageState extends State<SignUpPage> {
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                // Name field
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Name'),
                   validator: (value) {
@@ -63,7 +76,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   },
                   onSaved: (value) => _name = value,
                 ),
-                // Surname field
+                
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Surname'),
                   validator: (value) {

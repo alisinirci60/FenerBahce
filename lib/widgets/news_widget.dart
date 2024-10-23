@@ -1,12 +1,12 @@
-// ignore_for_file: unused_element, library_private_types_in_public_api
-
-import 'package:fenerbahce/widgets/news_item.dart';
+import 'package:fenerbahce/widgets/news_data.dart';
 import 'package:flutter/material.dart';
 
-class CustomWidget extends StatefulWidget {
-  NewsItem item;
 
-  CustomWidget({Key? key, required this.item}) : super(key: key);
+class CustomWidget extends StatefulWidget {
+  final NewsItem item;
+
+  const CustomWidget({Key? key, required this.item}) : super(key: key);
+
   @override
   _CustomWidgetState createState() => _CustomWidgetState();
 }
@@ -14,11 +14,6 @@ class CustomWidget extends StatefulWidget {
 class _CustomWidgetState extends State<CustomWidget> {
   int counter = 0; // Sayaç için bir değişken
 
-  void _incrementCounter() {
-    setState(() {
-      counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,4 +54,3 @@ class _CustomWidgetState extends State<CustomWidget> {
     );
   }
 }
-//deneme 12345

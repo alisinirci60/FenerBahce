@@ -15,24 +15,19 @@ class OurStadium extends StatelessWidget {
             fontFamily: 'LilitaOne',
             fontSize: 24,
           ),
-        
         ),
-          leading: IconButton(
+        leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => HomeScreen())
-            );
+                context, MaterialPageRoute(builder: (context) => HomeScreen()));
           },
         ),
       ),
-      
-        body: SingleChildScrollView( 
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            
             const Card(
               child: Padding(
                 padding: EdgeInsets.all(16.0),
@@ -162,7 +157,7 @@ class OurStadium extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 16), 
+            const SizedBox(height: 16),
             const Card(
               child: Padding(
                 padding: EdgeInsets.all(16.0),
@@ -219,7 +214,9 @@ class OurStadium extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 5),
-                    Text('Official stadium website',),
+                    Text(
+                      'Official stadium website',
+                    ),
                     SizedBox(height: 10),
                     Row(
                       children: [
@@ -238,34 +235,33 @@ class OurStadium extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-Card(
-  child: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Column( // Column ile düzenleme yapıyoruz
-      crossAxisAlignment: CrossAxisAlignment.start, // Soldan hizalama
-      children: [
-        Text(
-          "Location",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Location",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/stadium.jpg',
+                        fit: BoxFit.cover,
+                        height: 200,
+                        width: double.infinity,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-        ),
-        const SizedBox(height: 8), // "Location" ve görsel arasında boşluk
-        ClipRRect(
-          borderRadius: BorderRadius.circular(8.0),
-          child: Image.asset(
-            'assets/images/stadium.jpg',
-            fit: BoxFit.cover,
-            height: 200,
-            width: double.infinity,
-          ),
-        ),
-      ],
-    ),
-  ),
-),
-
           ],
         ),
       ),
