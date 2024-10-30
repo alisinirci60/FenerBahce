@@ -14,6 +14,7 @@ analyzer:
     prefer_const_constructors: ignore
     unused_field: ignore
     depend_on_referenced_packages: ignore
+    prefer_const_literals_to_create_immutables: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:

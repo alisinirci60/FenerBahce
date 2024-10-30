@@ -1,7 +1,7 @@
 import 'package:fenerbahce/widgets/news_data.dart';
 import 'package:flutter/material.dart';
 import 'package:fenerbahce/screens/home_screen.dart';
-import 'package:fenerbahce/widgets/news_widget.dart'; // CustomWidget'ı buradan import ediyoruz
+import 'package:fenerbahce/widgets/news_widget.dart'; 
 
 class News extends StatelessWidget {
   @override
@@ -25,10 +25,10 @@ class News extends StatelessWidget {
         ),
       ),
       body: ListView.builder(
-        itemCount: newsData.length, // Haberlerin sayısı
+        itemCount: newsData.length, 
         itemBuilder: (BuildContext context, int index) {
           final newsItem = newsData[index];
-          return CustomWidget(item: newsItem); // CustomWidget'ı kullanıyoruz
+          return CustomWidget(item: newsItem); 
         },
       ),
     );

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1098557927547",
+    "project_id": "fenerbahce-33218",
+    "storage_bucket": "fenerbahce-33218.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098557927547:android:c8a7761c24b2caf62732de",
+        "android_client_info": {
+          "package_name": "com.example.fenerbahce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhjLq_Q8UTICqye092-79QTtUtBc2HQSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

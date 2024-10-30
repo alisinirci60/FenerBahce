@@ -1,3 +1,5 @@
+
+
 import 'package:fenerbahce/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +14,7 @@ class _WelcomePageState extends State<WelcomePage> {
     super.initState();
 
     Future.delayed(Duration(seconds: 3), () {
-      // ignore: use_build_context_synchronously
+      
       Navigator.of(context).pushReplacement(
         _createRoute(), 
       );
@@ -37,7 +39,7 @@ class _WelcomePageState extends State<WelcomePage> {
           child: child,
         );
       },
-      transitionDuration: const Duration(milliseconds: 1200), // Geçiş süresi
+      transitionDuration: const Duration(milliseconds: 1200), 
     );
   }
 
@@ -45,7 +47,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:
-          const Color.fromARGB(255, 0, 45, 114), // Lacivert arka plan
+          const Color.fromARGB(255, 0, 45, 114), 
       body: Stack(
         children: const [
           Center(

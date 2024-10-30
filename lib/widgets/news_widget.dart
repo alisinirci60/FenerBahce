@@ -12,7 +12,7 @@ class CustomWidget extends StatefulWidget {
 }
 
 class _CustomWidgetState extends State<CustomWidget> {
-  int counter = 0; // Sayaç için bir değişken
+  int counter = 0; 
 
 
   @override

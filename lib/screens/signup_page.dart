@@ -1,6 +1,9 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fenerbahce/screens/login_page.dart';
 import 'package:flutter/material.dart';
-import 'dart:math'; 
+import 'dart:math';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -18,6 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
   int _num1 = 0;
   int _num2 = 0;
   int _captchaResult = 0;
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -27,7 +31,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
   void _generateMathCaptcha() {
     final random = Random();
-    
     _num1 = random.nextInt(10) + 1;
     _num2 = random.nextInt(10) + 1;
     _captchaResult = _num1 + _num2; 
@@ -39,18 +42,56 @@ class _SignUpPageState extends State<SignUpPage> {
     });
   }
 
+  Future<void> _signUp() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _email!,
+        password: _password!,
+      );
+      
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginPage()),
+      );
+      
+    } on FirebaseAuthException catch (e) {
+      String errorMessage;
+      if (e.code == 'email-already-in-use') {
+        errorMessage = 'The account already exists for that email.';
+      } else if (e.code == 'invalid-email') {
+        errorMessage = 'The email address is not valid.';
+      } else if (e.code == 'weak-password') {
+        errorMessage = 'The password is too weak.';
+      } else {
+        errorMessage = 'An error occurred. Please try again.';
+      }
+      // Hata mesajını göster
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(errorMessage)),
+      );
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:Color.fromARGB(255, 0, 45, 114), 
+        backgroundColor: Color.fromARGB(255, 0, 45, 114),
         title: Text(
           'Sign Up',
           style: TextStyle(
-            color:Color(0xFFFFED00),
-            fontSize:24,
-            fontFamily:'LilitaOne'
-             ),
+            color: Color(0xFFFFED00),
+            fontSize: 24,
+            fontFamily: 'LilitaOne'
+          ),
         ),
         leading: IconButton( 
           icon: Icon(Icons.arrow_back, color: Colors.white), 
@@ -76,7 +117,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   },
                   onSaved: (value) => _name = value,
                 ),
-                
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Surname'),
                   validator: (value) {
@@ -87,14 +127,12 @@ class _SignUpPageState extends State<SignUpPage> {
                   },
                   onSaved: (value) => _surname = value,
                 ),
-                
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Email'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
                     }
-                    
                     if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
                       return 'Please enter a valid email address';
                     }
@@ -102,7 +140,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   },
                   onSaved: (value) => _email = value,
                 ),
-                
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Password'),
                   obscureText: true,
@@ -118,7 +155,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   onSaved: (value) => _password = value,
                 ),
                 SizedBox(height: 20),
-                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -147,20 +183,17 @@ class _SignUpPageState extends State<SignUpPage> {
                   keyboardType: TextInputType.number, 
                 ),
                 SizedBox(height: 20),
-               
-                ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      _formKey.currentState!.save();
-                      
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
-                      );
-                    }
-                  },
-                  child: Text('Sign Up'),
-                ),
+                _isLoading
+                    ? CircularProgressIndicator()
+                    : ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            _formKey.currentState!.save();
+                            _signUp();
+                          }
+                        },
+                        child: Text('Sign Up'),
+                      ),
               ],
             ),
           ),

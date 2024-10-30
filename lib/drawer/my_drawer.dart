@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:fenerbahce/drawer/branches/basketball.dart';
 import 'package:fenerbahce/drawer/branches/football.dart';
 import 'package:fenerbahce/drawer/branches/volleyball.dart';
@@ -80,6 +82,16 @@ class MyDrawer extends StatelessWidget {
                   ],
                 ),
                
+                /*ListTile(
+                  title: const Text('Our History'),
+                  trailing: const Icon(Icons.history_edu),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => OurHistory()),
+                    );
+                  },
+                ), */
                 ListTile(
                   title: const Text('Our History'),
                   trailing: const Icon(Icons.history_edu),
@@ -90,6 +102,7 @@ class MyDrawer extends StatelessWidget {
                     );
                   },
                 ),
+
                 ListTile(
                   title: const Text("Presidents"),
                   trailing: const Icon(Icons.person_2_outlined),

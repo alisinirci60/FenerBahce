@@ -1,5 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'presidents_data.dart'; // Verilerin tutulduğu dosyayı dahil ediyoruz
+import 'presidents_data.dart';
 
 class Presidents extends StatefulWidget {
   @override
@@ -7,7 +9,6 @@ class Presidents extends StatefulWidget {
 }
 
 class _PresidentsState extends State<Presidents> {
-  // Görselin hareket edip etmeyeceğini kontrol eden değişken
   bool _isTapped = false;
 
   @override
@@ -31,55 +32,62 @@ class _PresidentsState extends State<Presidents> {
           },
         ),
       ),
-      body: ListView.builder(
-        itemCount: presidents.length,
-        itemBuilder: (context, index) {
-          final president = presidents[index];
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                GestureDetector(
-                  onTapDown: (details) {
-                    setState(() {
-                      _isTapped = true;
-                    });
-                  },
-                  onTapUp: (details) {
-                    setState(() {
-                      _isTapped = false;
-                    });
-                  },
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 200),
-                    transform: _isTapped
-                        ? Matrix4.translationValues(0, -10, 0) // Yukarı hareket ettir
-                        : Matrix4.identity(),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        president.imageUrl,
-                        fit: BoxFit.cover,
-                        height: 350,
-                        width: 300,
+      body: Column(
+        children: [
+          SizedBox(height: 20),
+          Expanded(
+            child: ListView.builder(
+              itemCount: presidents.length,
+              itemBuilder: (context, index) {
+                final president = presidents[index];
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTapDown: (details) {
+                          setState(() {
+                            _isTapped = true;
+                          });
+                        },
+                        onTapUp: (details) {
+                          setState(() {
+                            _isTapped = false;
+                          });
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          transform: _isTapped
+                              ? Matrix4.translationValues(0, -10, 0)
+                              : Matrix4.identity(),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              president.imageUrl,
+                              fit: BoxFit.cover,
+                              height: 350,
+                              width: 300,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 8),
+                      Text(
+                        president.name,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(president.order),
+                      Text(president.years),
+                    ],
                   ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  president.name,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(president.order),
-                Text(president.years),
-              ],
+                );
+              },
             ),
-          );
-        },
+          ),
+        ],
       ),
     );
   }
