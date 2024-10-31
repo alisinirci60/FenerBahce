@@ -82,16 +82,6 @@ class MyDrawer extends StatelessWidget {
                   ],
                 ),
                
-                /*ListTile(
-                  title: const Text('Our History'),
-                  trailing: const Icon(Icons.history_edu),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => OurHistory()),
-                    );
-                  },
-                ), */
                 ListTile(
                   title: const Text('Our History'),
                   trailing: const Icon(Icons.history_edu),

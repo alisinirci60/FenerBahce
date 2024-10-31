@@ -1,0 +1,137 @@
+{
+  "Football": {
+    "caglar_soyuncu": {
+      "age": 28,
+      "name": "Çağlar Söyüncü",
+      "nationality": "Turkey",
+      "number": 4,
+      "position": "Defender"
+    },
+    "dominic_livakovic": {
+      "age": 29,
+      "name": "Dominic Livakovic",
+      "nationality": "Croatia",
+      "number": 40,
+      "position": "Goalkeeper"
+    },
+    "dusan_tadic": {
+      "age": 35,
+      "name": "Dušan Tadić",
+      "nationality": "Serbia",
+      "number": 10,
+      "position": "Forward"
+    },
+    "edin_dzeko": {
+      "age": 38,
+      "name": "Edin Džeko",
+      "nationality": "Bosnia",
+      "number": 9,
+      "position": "Forward"
+    },
+    "en_nesyri": {
+      "age": 19,
+      "name": "Youssef En-Nesyri",
+      "nationality": "Morocco",
+      "number": 27,
+      "position": "Forward"
+    },
+    "fred": {
+      "age": 31,
+      "name": "Fred",
+      "nationality": "Brazil",
+      "number": 13,
+      "position": "Midfielder"
+    },
+    "irfancan_kahveci": {
+      "age": 29,
+      "name": "İrfan Can Kahveci",
+      "nationality": "Turkey",
+      "number": 17,
+      "position": "Midfielder"
+    },
+    "alexander_djiku": {
+      "name": "Alexander Djiku",
+      "position": "Defender",
+      "age": 29,
+      "number": 6,
+      "nationality": "Ghana"
+    },
+    "rodrigo_becao": {
+      "name": "Rodrigo Becão",
+      "position": "Defender",
+      "age": 28,
+      "number": 3,
+      "nationality": "Brazil"
+    },
+    "jayden_oosterwolde": {
+      "name": "Jayden Oosterwolde",
+      "position": "Defender",
+      "age": 22,
+      "number": 24,
+      "nationality": "Netherlands"
+    },
+    "ismail_yuksek": {
+      "name": "İsmail Yüksek",
+      "position": "Midfielder",
+      "age": 24,
+      "number": 5,
+      "nationality": "Turkey"
+    },
+    "mert_hakan_yandas": {
+      "name": "Mert Hakan Yandaş",
+      "position": "Midfielder",
+      "age": 29,
+      "number": 11,
+      "nationality": "Turkey"
+    },
+    "irfan_can_egribayat": {
+      "name": "İrfan Can Eğribayat",
+      "position": "Goalkeeper",
+      "age": 25,
+      "number": 35,
+      "nationality": "Turkey"
+    },
+    "sofyan_amrabat": {
+      "name": "Sofyan Amrabat",
+      "position": "Midfielder",
+      "age": 27,
+      "number": 34,
+      "nationality": "Morocco"
+    },
+    "allan_saint_maximin": {
+      "name": "Allan Saint-Maximin",
+      "position": "Forward",
+      "age": 27,
+      "number": 22,
+      "nationality": "France"
+    },
+    "bartug_elmaz": {
+      "name": "Bartuğ Elmaz",
+      "position": "Midfielder",
+      "age": 20,
+      "number": 16,
+      "nationality": "Turkey"
+    },
+    "mert_muldur": {
+      "name": "Mert Müldür",
+      "position": "Defender",
+      "age": 24,
+      "number": 13,
+      "nationality": "Turkey"
+    },
+    "burak_kapacak": {
+      "name": "Burak Kapacak",
+      "position": "Defender",
+      "age": 23,
+      "number": 77,
+      "nationality": "Turkey"
+    },
+    "sebastian_szymanski": {
+      "name": "Sebastian Szymański",
+      "position": "Midfielder",
+      "age": 24,
+      "number": 53,
+      "nationality": "Poland"
+    }
+  }
+}
