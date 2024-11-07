@@ -1,5 +1,7 @@
 
 
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:fenerbahce/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +16,7 @@ class _WelcomePageState extends State<WelcomePage> {
     super.initState();
 
     Future.delayed(Duration(seconds: 3), () {
+      
       
       Navigator.of(context).pushReplacement(
         _createRoute(), 

@@ -341,7 +341,7 @@ Padding(
   }
 }
 
-// NewsCard Widget
+
 class NewsCard extends StatelessWidget {
   final String title;
   final String description;
